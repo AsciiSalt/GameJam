@@ -1,0 +1,16 @@
+{
+  "name": "GameJam",
+  "tree": {
+      "$className": "Folder",
+      "$path": "src",
+      "Roact": {
+        "$path": "modules/roact"
+      },
+      "Rodux": {
+        "$path": "modules/rodux"
+      },
+      "RoactRodux": {
+        "$path": "modules/roact-rodux"
+      }
+  }
+}
