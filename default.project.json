@@ -4,13 +4,13 @@
       "$className": "Folder",
       "$path": "src",
       "Roact": {
-        "$path": "modules/roact"
+        "$path": "modules/roact/src"
       },
       "Rodux": {
-        "$path": "modules/rodux"
+        "$path": "modules/rodux/src"
       },
       "RoactRodux": {
-        "$path": "modules/roact-rodux"
+        "$path": "modules/roact-rodux/src"
       }
   }
 }
