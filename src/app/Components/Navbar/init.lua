@@ -57,7 +57,7 @@ function Navbar:render()
         SettingsButton = Roact.createElement("ImageButton", {
             Size = UDim2.new(0,65,0,65),
             Position = UDim2.new(1,-70, 0, 5),
-            Image = "rbxassetid://6967020374",
+            Image = "rbxassetid://6967020365",
             BackgroundTransparency = 1,
             ImageColor3 = self.settingsPressed:map(function(value: Color3)
                 return value

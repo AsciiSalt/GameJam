@@ -1,5 +1,5 @@
 local toolbar = plugin:CreateToolbar("DevShore")
-local WidgetButton = toolbar:CreateButton("GameJam", "Toggle UI", "rbxassetid://6967019662")
+local WidgetButton = toolbar:CreateButton("GameJam", "Toggle UI", "rbxassetid://6967019613 ")
 local widgetInfo = DockWidgetPluginGuiInfo.new(Enum.InitialDockState.Float, false, false, 350, 350, 350, 50)
 local widget = plugin:CreateDockWidgetPluginGui("GameJam", widgetInfo)
 widget.Name = "GameJam"
