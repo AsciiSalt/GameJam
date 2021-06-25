@@ -145,7 +145,7 @@ function TimeDisplay:didMount()
 
     local function decideElapsed(): number
         local currentTime = osTime()
-    
+
         if startDate == nil or concludeDate == nil then
             return 0
         end
@@ -201,12 +201,12 @@ function TimeDisplay:didMount()
 end
 
 function TimeDisplay:didUpdate(previousProps, previousState)
-    if previousProps.startDate == self.props.startDate  or previousProps.concludeDate == self.props.concludeDate then
+    if previousProps.startDate == self.props.startDate and previousProps.concludeDate == self.props.concludeDate then
         return
     end
     self:setState({
-        startDate = self.props.startDate,
-        concludeDate = self.props.concludeDate
+        startDate = self.props.startDate and self.props.startDate or Roact.None,
+        concludeDate = self.props.concludeDate and self.props.concludeDate or Roact.None
     })
 end
 

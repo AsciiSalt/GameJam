@@ -3,7 +3,7 @@ local HttpService = game:GetService('HttpService')
 local Roact = require(script.Parent.Roact)
 local RoactRodux = require(script.Parent.RoactRodux)
 
-local App = Roact.Component:extend("App")
+local App = Roact.PureComponent:extend("App")
 local Components = {
     TimeDisplay = require(script.Components.TimeDisplay),
     InfoFrame = require(script.Components.InfoFrame),
@@ -25,7 +25,6 @@ function App:init()
 end
 
 function App:render()
-
     local startDate = self.state.startDate
     local concludeDate = self.state.concludeDate
 
@@ -101,16 +100,16 @@ function App:didMount()
 
     coroutine.wrap(function()
         while ( poll == true ) do
-            local startDate = nil
-            local concludeDate = nil
-            local objective = nil
+            local startDate = Roact.None
+            local concludeDate = Roact.None
+            local objective = Roact.None
 
             do
                 local response = request("/startDate")
                 if response and response.StatusCode == 200 then
                     startDate = tonumber(response.Body)
                 else
-                    startDate = nil
+                    startDate = Roact.None
                 end
             end
 
@@ -119,7 +118,7 @@ function App:didMount()
                 if response and response.StatusCode == 200 then
                     concludeDate = tonumber(response.Body)
                 else
-                    concludeDate = nil
+                    concludeDate = Roact.None
                 end
             end
 
@@ -134,8 +133,8 @@ function App:didMount()
 
             if self.state.startDate ~= startDate or self.state.concludeDate ~= concludeDate or self.state.objective ~= objective then
                 self:setState({
-                    startDate = tonumber(startDate),
-                    concludeDate = tonumber(concludeDate),
+                    startDate = startDate,
+                    concludeDate = concludeDate,
                     objective = objective
                 })
             end

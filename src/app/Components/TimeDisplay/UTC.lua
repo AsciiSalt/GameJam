@@ -38,9 +38,9 @@ function UTC:render()
             TextYAlignment = Enum.TextYAlignment.Center,
             RichText = true,
             Text =  '<font color="rgb(' .. table.concat(colors.days, ",") .. ')">' .. tostring(days) .. '</font>:' ..
-                        '<font color="rgb(' .. table.concat(colors.hours, ",") .. ')">' .. tostring(hours) .. '</font>:' ..
-                        '<font color="rgb(' .. table.concat(colors.minutes, ",") .. ')">' .. tostring(minutes) .. '</font>:' ..
-                        '<font color="rgb(' .. table.concat(colors.seconds, ",") .. ')">' .. tostring(seconds) .. '</font>',
+                        '<font color="rgb(' .. table.concat(colors.hours, ",") .. ')">' .. (hours < 10 and "0"..tostring(hours) or tostring(hours)) .. '</font>:' ..
+                        '<font color="rgb(' .. table.concat(colors.minutes, ",") .. ')">' .. (minutes < 10 and "0"..tostring(minutes) or tostring(minutes)) .. '</font>:' ..
+                        '<font color="rgb(' .. table.concat(colors.seconds, ",") .. ')">' .. (seconds < 10 and "0"..tostring(seconds) or tostring(seconds)) .. '</font>',
             TextScaled = true,
             TextColor3 = Color3.fromRGB(255,255,255),
             Font = Enum.Font.RobotoMono
